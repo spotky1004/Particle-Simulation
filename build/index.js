@@ -16,11 +16,12 @@ function tick() {
     if (spawnTime < 0) {
         spawnTime += 100;
         const rad = Math.random() * Math.PI * 2;
+        const mass = Math.random() * 36;
         app.addParticle(new Particle({
             color: `hsl(${Math.random() * 360}, 60%, 70%)`,
             friction: 3 * Math.random(),
-            mass: Math.random() * 9,
-            size: Math.random() * 6 + 1,
+            mass: mass,
+            size: Math.sqrt(mass),
             threshold: 0,
             velocity: new Vec2(40 * Math.random() * Math.cos(rad + Math.PI), 40 * Math.random() * Math.sin(rad + Math.PI)),
             x: 50 * Math.cos(rad) + 50,
